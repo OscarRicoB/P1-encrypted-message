@@ -45,7 +45,7 @@ if ($fh) {
     exit("Error: The four line containing the message can only contain characters that fits the regex [a-zA-Z0-9]");
   }
   $nln4 = preg_replace("/(.)\\1+/", "$1", $ln4);
-  if (strlen($nln4) == $ln1_arr[2]) {
+  if (strlen($ln4) == $ln1_arr[2]) {
     $outputFile = fopen(FILE_ROUTE."output.txt", "w");
     fwrite($outputFile, (strpos($nln4, $ln2) !== false) ? "Si\n":"No\n");
     fwrite($outputFile, (strpos($nln4, $ln3) !== false) ? "Si\n":"No\n");
